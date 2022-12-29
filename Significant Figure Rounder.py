@@ -10,10 +10,15 @@ while int(num.replace(".", "")) == 0:
 
 if "." in num:
     num_1 = num.replace(".", "")
+    dp_pos = num.find(".")
 
     while num_1.isdigit() == False or num.count(".") > 1:
         num = input("Please input a number:")
         num_1 = num.replace(".", "")
+
+    if "1" in num[0:dp_pos] or "2" in num[0:dp_pos] or "3" in num[0:dp_pos] or "4" in num[0:dp_pos] or "5" in num[0:dp_pos] or "6" in num[0:dp_pos] or "7" in num[0:dp_pos] or "8" in num[0:dp_pos] or "9" in num[0:dp_pos]:
+        while num[0] == "0":
+            num = num[1:len(num)]
 
 else:
     while num.isdigit() == False:
