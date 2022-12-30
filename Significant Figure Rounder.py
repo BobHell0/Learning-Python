@@ -5,10 +5,13 @@ num = input("Input a number: ")
 # Smart-Ass Removal
 num_nodp = num.replace(".","")
 
-while int(num.replace(".", "")) == 0:
+while int(num_nodp) == 0:
     num = input("Please enter a non-zero number: ") 
 
 if "." in num:
+    if num.find(".") + 1 == len(num):
+        num = num.replace(".", "")
+    
     num_1 = num.replace(".", "")
     dp_pos = num.find(".")
 
@@ -28,7 +31,7 @@ else:
 
 s_f = input("How many significant figures? ")
 
-while s_f.isdigit() == False or s_f == "0":
+while s_f.isdigit() == False or int(s_f) == 0:
     s_f = input("Don't be a donkey: ")
 
 s_f = int(s_f)
@@ -42,6 +45,7 @@ if len(num) < s_f:
         num_2 = num.replace(".", "")
 
 # Integer Rounding
+
 if not("." in num):
     if len(num) == s_f:
         print(num)
